@@ -1,0 +1,67 @@
+[0.032s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam -- -j4 -l4
+[0.089s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.331s] -- Found slam_toolbox: 2.6.9 (/opt/ros/humble/share/slam_toolbox/cmake)
+[0.399s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.406s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.420s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.454s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.499s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.819s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.825s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[1.015s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.345s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[1.347s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.415s] -- Setting assimp_DIR to: '/opt/ros/humble/share/rviz_assimp_vendor/cmake/../../../opt/rviz_assimp_vendor/lib/cmake/assimp-4.1'
+[1.423s] -- Setting OGRE_DIR to: '/opt/ros/humble/share/rviz_ogre_vendor/cmake/../../../opt/rviz_ogre_vendor/lib/OGRE/cmake'
+[1.426s] -- Found OGRE
+[1.426s] --   static     : OFF
+[1.426s] --   components : HLMS;MeshLodGenerator;Overlay;Paging;Property;RTShaderSystem;Terrain;Volume
+[1.427s] --   plugins    : Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI
+[1.427s] --   media      : /opt/ros/humble/opt/rviz_ogre_vendor/share/OGRE/Media
+[1.427s] -- OGRE_LIBRARIES: OgreHLMS;OgreMeshLodGenerator;OgreOverlay;OgrePaging;OgreProperty;OgreRTShaderSystem;OgreTerrain;OgreVolume;OgreMain
+[1.427s] -- OGRE_LIBRARY_DIRS: /opt/ros/humble/opt/rviz_ogre_vendor/lib
+[1.427s] -- OGRE_PLUGINS: Plugin_BSPSceneManager;Plugin_OctreeSceneManager;Plugin_PCZSceneManager;Plugin_ParticleFX;RenderSystem_GL;RenderSystem_GL3Plus;Codec_STBI
+[1.427s] -- OGRE_PLUGIN_DIR: /opt/ros/humble/opt/rviz_ogre_vendor/lib/OGRE
+[1.427s] -- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_RELEASE: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreOverlay.so
+[1.428s] -- rviz_ogre_vendor::OgreOverlay for IMPORTED_LOCATION_DEBUG: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreOverlay.so
+[1.428s] -- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_RELEASE: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreMain.so
+[1.428s] -- rviz_ogre_vendor::OgreMain for IMPORTED_LOCATION_DEBUG: /opt/ros/humble/opt/rviz_ogre_vendor/lib/libOgreMain.so
+[1.566s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[1.731s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.920s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.921s] -- Added test 'lint_cmake' to check CMake code style
+[1.922s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.925s] -- Added test 'xmllint' to check XML markup files
+[1.927s] -- Configuring done
+[1.941s] -- Generating done
+[1.946s] -- Build files have been written to: /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam
+[2.002s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam -- -j4 -l4
+[2.021s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam
+[2.033s] -- Install configuration: ""
+[2.034s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch
+[2.034s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/yolobot_maze_slam.launch.py
+[2.035s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/slam_toolbox.launch.py
+[2.035s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/teleop.launch.py
+[2.035s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/lidar_visualizer.launch.py
+[2.035s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/yolobot_with_slam.launch.py
+[2.036s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/config
+[2.036s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/config/slam.rviz
+[2.036s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/config/mapper_params_online_async.yaml
+[2.036s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/lib/yolobot_slam/teleop_keyboard.py
+[2.037s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/lib/yolobot_slam/lidar_visualizer.py
+[2.037s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/ament_index/resource_index/package_run_dependencies/yolobot_slam
+[2.037s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/ament_index/resource_index/parent_prefix_path/yolobot_slam
+[2.037s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/ament_prefix_path.sh
+[2.037s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/ament_prefix_path.dsv
+[2.038s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/path.sh
+[2.038s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/path.dsv
+[2.038s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.bash
+[2.038s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.sh
+[2.038s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.zsh
+[2.038s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.dsv
+[2.039s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/package.dsv
+[2.039s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/ament_index/resource_index/packages/yolobot_slam
+[2.039s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/cmake/yolobot_slamConfig.cmake
+[2.039s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/cmake/yolobot_slamConfig-version.cmake
+[2.039s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/package.xml
+[2.043s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam

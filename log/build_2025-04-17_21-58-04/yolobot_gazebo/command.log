@@ -1,0 +1,4 @@
+Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo -- -j4 -l4
+Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo -- -j4 -l4
+Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo
+Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo

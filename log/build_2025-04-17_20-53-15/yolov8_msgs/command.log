@@ -1,0 +1,4 @@
+Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs -- -j4 -l4
+Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs -- -j4 -l4
+Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs
+Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolov8_msgs

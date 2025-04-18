@@ -1,0 +1,25 @@
+To use the SLAM system, you would:
+## 1 -Build the workspace:
+
+source ~/ros2_ws/ros2_env/bin/activate
+cd /home/aladine/memoir/slam_yolo/yolobot
+colcon build
+source install/setup.bash
+
+
+## 2 - Launch the complete system:
+ros2 launch yolobot_slam yolobot_with_slam.launch.py
+
+## 3 - In a separate terminal, launch the keyboard teleop for control:
+
+source ~/ros2_ws/ros2_env/bin/activate
+cd /home/aladine/memoir/slam_yolo/yolobot
+source install/setup.bash
+ros2 launch yolobot_slam teleop.launch.py
+
+
+## 4 - Use the keyboard to drive the robot around, building a map of the environment with SLAM Toolbox.
+
+
+## 5 - Save the map when finished:
+ros2 service call /slam_toolbox/save_map slam_toolbox/srv/SaveMap "{name: {data: 'my_map'}}"

@@ -1,0 +1,27 @@
+[0.021s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=(ros2_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo -- -j4 -l4
+[0.071s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=(ros2_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo -- -j4 -l4
+[0.084s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=(ros2_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo
+[0.093s] -- Install configuration: ""
+[0.093s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo//launch
+[0.093s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo//launch/start_maze_world.launch.py
+[0.093s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo//launch/yolobot_launch.py
+[0.094s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo//launch/start_world_launch.py
+[0.094s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo//worlds
+[0.094s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo//worlds/yolo_test.world
+[0.094s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo//worlds/maze_world.world
+[0.094s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/ament_index/resource_index/package_run_dependencies/yolobot_gazebo
+[0.094s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/ament_index/resource_index/parent_prefix_path/yolobot_gazebo
+[0.095s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/environment/ament_prefix_path.sh
+[0.095s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/environment/ament_prefix_path.dsv
+[0.095s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/environment/path.sh
+[0.095s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/environment/path.dsv
+[0.095s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/local_setup.bash
+[0.095s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/local_setup.sh
+[0.095s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/local_setup.zsh
+[0.096s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/local_setup.dsv
+[0.096s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/package.dsv
+[0.096s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/ament_index/resource_index/packages/yolobot_gazebo
+[0.096s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/cmake/yolobot_gazeboConfig.cmake
+[0.096s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/cmake/yolobot_gazeboConfig-version.cmake
+[0.096s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_gazebo/share/yolobot_gazebo/package.xml
+[0.098s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble PS1=(ros2_env) \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_gazebo
