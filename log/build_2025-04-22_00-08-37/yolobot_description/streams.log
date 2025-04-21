@@ -1,0 +1,26 @@
+[0.055s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description -- -j4 -l4
+[0.319s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description -- -j4 -l4
+[0.320s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description
+[0.342s] -- Install configuration: ""
+[0.343s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description//launch
+[0.343s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description//launch/spawn_yolobot.py
+[0.343s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description//launch/spawn_yolobot_launch.launch.py
+[0.343s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description//robot
+[0.346s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description//robot/yolobot.urdf
+[0.347s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/lib/yolobot_description/spawn_yolobot.py
+[0.347s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/ament_index/resource_index/package_run_dependencies/yolobot_description
+[0.347s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/ament_index/resource_index/parent_prefix_path/yolobot_description
+[0.347s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/environment/ament_prefix_path.sh
+[0.347s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/environment/ament_prefix_path.dsv
+[0.347s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/environment/path.sh
+[0.347s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/environment/path.dsv
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/local_setup.bash
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/local_setup.sh
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/local_setup.zsh
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/local_setup.dsv
+[0.348s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/package.dsv
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/ament_index/resource_index/packages/yolobot_description
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/cmake/yolobot_descriptionConfig.cmake
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/cmake/yolobot_descriptionConfig-version.cmake
+[0.348s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_description/share/yolobot_description/package.xml
+[0.485s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_description

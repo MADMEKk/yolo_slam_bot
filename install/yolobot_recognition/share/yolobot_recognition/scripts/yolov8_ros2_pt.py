@@ -11,6 +11,8 @@ from yolov8_msgs.msg import Yolov8Inference
 
 bridge = CvBridge()
 
+
+
 class Camera_subscriber(Node):
 
     def __init__(self):

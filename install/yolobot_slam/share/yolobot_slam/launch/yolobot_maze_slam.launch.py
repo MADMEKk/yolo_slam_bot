@@ -21,44 +21,70 @@ def generate_launch_description():
 
     # Declare arguments
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
+    namespace = LaunchConfiguration('namespace', default='')
+    x_pose = LaunchConfiguration('x_pose', default='0.0')
+    y_pose = LaunchConfiguration('y_pose', default='0.0')
     
     declare_use_sim_time_argument = DeclareLaunchArgument(
         'use_sim_time',
         default_value='true',
         description='Use simulation/Gazebo clock')
     
+    declare_namespace_argument = DeclareLaunchArgument(
+        'namespace',
+        default_value='',
+        description='Namespace for the robot')
+        
+    declare_x_pose_argument = DeclareLaunchArgument(
+        'x_pose',
+        default_value='0.0',
+        description='X position for robot spawning')
+
+    declare_y_pose_argument = DeclareLaunchArgument(
+        'y_pose',
+        default_value='0.0',
+        description='Y position for robot spawning')
+    
     # Launch joystick control
     joy_node = Node(
         package="joy",
-        executable="joy_node"
+        executable="joy_node",
+        namespace=namespace
     )
 
-    # Launch Gazebo with maze world
+    # Launch Gazebo with maze world (no namespace as it's a global resource)
     start_maze_world = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_yolobot_gazebo, 'launch', 'start_maze_world.launch.py'),
         )
     )
 
-    # Spawn robot
+    # Spawn robot with namespace and position
     spawn_robot_world = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_yolobot_description, 'launch', 'spawn_yolobot_launch.launch.py'),
-        )
+        ),
+        launch_arguments={
+            'namespace': namespace,
+            'x_pose': x_pose,
+            'y_pose': y_pose
+        }.items()
     )     
 
     # Start robot control
     spawn_robot_control = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_yolobot_control, 'launch', 'yolobot_control.launch.py'),
-        )
+        ),
+        launch_arguments={'namespace': namespace}.items()
     )  
 
     # Start YOLO object detection
     spawn_yolo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_yolobot_recognition, 'launch', 'launch_yolov8.launch.py'),
-        )
+        ),
+        launch_arguments={'namespace': namespace}.items()
     )
     
     # Start SLAM Toolbox
@@ -66,13 +92,16 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(pkg_yolobot_slam, 'launch', 'slam_toolbox.launch.py'),
         ),
-        launch_arguments={'use_sim_time': use_sim_time}.items()
+        launch_arguments={
+            'use_sim_time': use_sim_time,
+            'namespace': namespace
+        }.items()
     )
     
     # Launch RViz with our configuration
     rviz_config_file = os.path.join(pkg_yolobot_slam, 'config', 'slam.rviz')
     
-    # Start RViz
+    # Start RViz (only one instance needed, no namespace)
     start_rviz = Node(
         package='rviz2',
         executable='rviz2',
@@ -84,6 +113,9 @@ def generate_launch_description():
 
     return LaunchDescription([
         declare_use_sim_time_argument,
+        declare_namespace_argument,
+        declare_x_pose_argument,
+        declare_y_pose_argument,
         joy_node,
         start_maze_world,
         spawn_robot_world,
