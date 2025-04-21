@@ -1,0 +1,34 @@
+[0.100s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam -- -j4 -l4
+[0.248s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --build /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam -- -j4 -l4
+[0.249s] Invoking command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam
+[0.271s] -- Install configuration: ""
+[0.274s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch
+[0.274s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/yolobot_maze_slam.launch.py
+[0.274s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/slam_toolbox.launch.py
+[0.274s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/simple_teleop.launch.py
+[0.274s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/teleop.launch.py
+[0.274s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/lidar_visualizer.launch.py
+[0.275s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/yolobot_with_slam.launch.py
+[0.280s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/launch/multi_robot_maze_slam.launch.py
+[0.280s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/config
+[0.280s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/config/slam.rviz
+[0.280s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/config/multi_robot_slam.rviz
+[0.280s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/config/mapper_params_online_async.yaml
+[0.281s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/lib/yolobot_slam/teleop_keyboard.py
+[0.281s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/lib/yolobot_slam/lidar_visualizer.py
+[0.281s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/ament_index/resource_index/package_run_dependencies/yolobot_slam
+[0.281s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/ament_index/resource_index/parent_prefix_path/yolobot_slam
+[0.281s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/ament_prefix_path.sh
+[0.281s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/ament_prefix_path.dsv
+[0.281s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/path.sh
+[0.282s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/environment/path.dsv
+[0.282s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.bash
+[0.282s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.sh
+[0.282s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.zsh
+[0.282s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/local_setup.dsv
+[0.282s] -- Installing: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/package.dsv
+[0.289s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/ament_index/resource_index/packages/yolobot_slam
+[0.289s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/cmake/yolobot_slamConfig.cmake
+[0.289s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/cmake/yolobot_slamConfig-version.cmake
+[0.289s] -- Up-to-date: /home/aladine/memoir/slam_yolo/yolobot/install/yolobot_slam/share/yolobot_slam/package.xml
+[0.298s] Invoked command in '/home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble VIRTUAL_ENV_PROMPT=(ros2_env) /usr/bin/cmake --install /home/aladine/memoir/slam_yolo/yolobot/build/yolobot_slam

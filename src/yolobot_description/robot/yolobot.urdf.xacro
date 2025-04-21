@@ -1,0 +1,447 @@
+<?xml version="1.0" ?>
+<robot name="yolobot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Arguments/Parameters -->
+  <xacro:arg name="robot_name" default="yolobot"/> 
+  <xacro:arg name="prefix" default=""/>
+
+  <!-- Define the robot name -->
+  <xacro:property name="robot_name" value="$(arg robot_name)"/>
+  <xacro:property name="prefix" value="$(arg prefix)"/>
+  
+  <!-- Common Materials -->
+  <material name="${prefix}black">
+    <color rgba="0.0 0.0 0.0 1.0"/>
+  </material>
+  <material name="${prefix}blue">
+    <color rgba="0.203125 0.23828125 0.28515625 1.0"/>
+  </material>
+  <material name="${prefix}green">
+    <color rgba="0.0 0.8 0.0 1.0"/>
+  </material>
+  <material name="${prefix}grey">
+    <color rgba="0.2 0.2 0.2 1.0"/>
+  </material>
+  <material name="${prefix}orange">
+    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+  </material>
+  <material name="${prefix}brown">
+    <color rgba="0.870588235294 0.811764705882 0.764705882353 1.0"/>
+  </material>
+  <material name="${prefix}red">
+    <color rgba="0.80078125 0.12890625 0.1328125 1.0"/>
+  </material>
+  <material name="${prefix}white">
+    <color rgba="1.0 1.0 1.0 1.0"/>
+  </material>
+
+  <!-- Gazebo materials -->
+  <gazebo reference="${prefix}chassis">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="${prefix}left_wheel">
+    <kp>1000.0</kp>
+    <kd>1000.0</kd>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="${prefix}right_wheel">
+    <kp>1000.0</kp>
+    <kd>1000.0</kd>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+  <!-- ROS Control Plugin -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_control.so" name="gazebo_ros_control">
+      <robotNamespace>/${robot_name}</robotNamespace>
+      <robotParam>/robot_description</robotParam>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <!-- Differential Drive Controller -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
+      <ros>
+        <namespace>/${robot_name}</namespace>
+      </ros>
+
+      <!-- wheels -->
+      <left_joint>${prefix}joint_right_wheel</left_joint>
+      <right_joint>${prefix}joint_left_wheel</right_joint>
+
+      <!-- kinematics -->
+      <wheel_separation>0.1</wheel_separation>
+      <wheel_diameter>0.025</wheel_diameter>
+
+      <!-- limits -->
+      <max_wheel_torque>0.1</max_wheel_torque>
+      <max_wheel_acceleration>1.0</max_wheel_acceleration>
+
+      <!-- output -->
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>${prefix}chassis</robot_base_frame>
+    </plugin>
+  </gazebo>
+
+  <!-- IMU Plugin -->
+  <gazebo>
+    <plugin filename="libgazebo_ros_imu.so" name="gazebo_ros_imu_controller">
+      <robotNamespace>/${robot_name}/</robotNamespace>
+      <topicName>imu/data3</topicName>
+      <serviceName>imu/service</serviceName>
+      <bodyName>${prefix}chassis</bodyName>
+      <gaussianNoise>0</gaussianNoise>
+      <rpyOffsets>0 0 0</rpyOffsets>
+      <updateRate>50.0</updateRate>
+      <alwaysOn>true</alwaysOn>
+      <gaussianNoise>0</gaussianNoise>
+    </plugin>
+  </gazebo>
+
+  <!-- Base Link -->
+  <link name="${prefix}base_link">
+  </link>
+
+  <!-- Chassis Link -->
+  <link name="${prefix}chassis">
+    <!-- pose and inertial -->
+    <pose>0 0 0 0 0 0</pose>
+    <inertial>
+      <mass value="1.0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.025"/>
+      <inertia ixx="0.00033333333333333343" ixy="0" ixz="0" iyy="0.00033333333333333343" iyz="0" izz="0.00033333333333333343"/>
+      <inertia ixx="0.000241935" ixy="0" ixz="0" iyy="0.000241935" iyz="0" izz="0.000241935"/>
+    </inertial>
+    <!-- body -->
+    <collision name="${prefix}collision_chassis">
+      <geometry>
+        <box size="0.2 0.1 0.05"/>
+      </geometry>
+    </collision>
+    <visual name="${prefix}visual_chassis">
+      <geometry>
+        <box size="0.2 0.1 0.05"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <gazebo reference="${prefix}chassis">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  
+  <joint name="${prefix}base_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="${prefix}base_link"/>
+    <child link="${prefix}chassis"/>
+  </joint>
+
+  <!-- Camera Link -->
+  <link name='${prefix}rgb_cam_camera_link'>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.02 0.04 0.01"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="${prefix}rgb_cam_camera_link_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.04 0.0 0.5"/>
+    <parent link="${prefix}chassis"/>
+    <child link="${prefix}rgb_cam_camera_link"/>
+  </joint>
+
+  <link name="${prefix}rgb_cam_camera_link_frame">
+  </link>
+
+  <joint name="${prefix}rgb_cam_camera_frame_joint" type="fixed">
+    <origin xyz="0.01 0 0" rpy="0 0 0" />
+    <parent link="${prefix}rgb_cam_camera_link" />
+    <child link="${prefix}rgb_cam_camera_link_frame" />
+    <axis xyz="0 0 0"/>
+  </joint>
+
+  <!-- Camera Gazebo Plugin -->
+  <gazebo reference="${prefix}rgb_cam_camera_link_frame">
+    <sensor type="camera" name="${prefix}rgb_cam">
+      <always_on>1</always_on>
+      <update_rate>10.0</update_rate>
+      <camera name="${prefix}rgb_cam">
+        <pose>0 0 0 0 0 0</pose>
+        <horizontal_fov>1.3962634</horizontal_fov>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <clip>
+          <near>0.005</near>
+          <far>20.0</far>
+        </clip>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <alwaysOn>true</alwaysOn>
+        <updateRate>0.0</updateRate>
+        <cameraName>rgb_cam</cameraName>
+        <imageTopicName>image_raw</imageTopicName>
+        <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+        <frameName>${prefix}rgb_cam_camera_link_frame</frameName>
+        <hackBaseline>0.07</hackBaseline>
+        <distortionK1>0.0</distortionK1>
+        <distortionK2>0.0</distortionK2>
+        <distortionK3>0.0</distortionK3>
+        <distortionT1>0.0</distortionT1>
+        <distortionT2>0.0</distortionT2>
+      </plugin>
+    </sensor>
+  </gazebo>
+
+  <!-- Right Wheel -->
+  <link name="${prefix}right_wheel">
+    <inertial>
+      <mass value="0.2"/>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <inertia ixx="3.126666666666667e-05" ixy="0" ixz="0" iyy="3.126666666666667e-05" iyz="0" izz="6.250000000000001e-05"/>
+    </inertial>
+    <collision name="${prefix}link_right_wheel_collision">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.035"/>
+      </geometry>
+    </collision>
+    <visual name="${prefix}link_right_wheel_visual">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.035"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <joint name="${prefix}joint_right_wheel" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.05 0.05 -0.025"/>
+    <child link="${prefix}right_wheel"/>
+    <parent link="${prefix}chassis"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- Left Wheel -->
+  <link name="${prefix}left_wheel">
+    <inertial>
+      <mass value="0.2"/>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <inertia ixx="3.126666666666667e-05" ixy="0" ixz="0" iyy="3.126666666666667e-05" iyz="0" izz="6.250000000000001e-05"/>
+    </inertial>
+    <collision name="${prefix}link_left_wheel_collision">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.035"/>
+      </geometry>
+    </collision>
+    <visual name="${prefix}link_left_wheel_visual">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.01" radius="0.035"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <joint name="${prefix}joint_left_wheel" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.05 -0.05 -0.025"/>
+    <child link="${prefix}left_wheel"/>
+    <parent link="${prefix}chassis"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
+  <!-- Front Caster -->
+  <link name="${prefix}front_yaw_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+    </inertial>
+    <collision name="${prefix}front_yaw_collision">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.001" radius="0.0045000000000000005"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="${prefix}front_yaw_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0.08 0 -0.05"/>
+    <parent link="${prefix}chassis"/>
+    <child link="${prefix}front_yaw_link"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" velocity="100.0"/>
+    <dynamics damping="0.0" friction="0.1"/>
+  </joint>
+  
+  <transmission name="${prefix}front_yaw_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}front_yaw_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}front_yaw_jointMotor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <link name="${prefix}front_roll_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <inertia ixx="5.145833333333334e-09" ixy="0" ixz="0" iyy="5.145833333333334e-09" iyz="0" izz="1.0125000000000003e-08"/>
+    </inertial>
+    <collision name="${prefix}front_roll_collision">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.001" radius="0.0045000000000000005"/>
+      </geometry>
+    </collision>
+  </link>
+  
+  <joint name="${prefix}front_roll_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="${prefix}front_yaw_link"/>
+    <child link="${prefix}front_roll_link"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" velocity="100.0"/>
+    <dynamics damping="0.0" friction="0.1"/>
+  </joint>
+  
+  <transmission name="${prefix}front_roll_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}front_roll_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}front_roll_jointMotor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <link name="${prefix}front_pitch_link">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <inertia ixx="4e-08" ixy="0" ixz="0" iyy="4e-08" iyz="0" izz="4e-08"/>
+    </inertial>
+    <collision name="${prefix}front_collision">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+    <visual name="${prefix}front_visual">
+      <origin rpy="0 1.5707 1.5707" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </visual>
+  </link>
+  
+  <joint name="${prefix}front_pitch_joint" type="continuous">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <parent link="${prefix}front_roll_link"/>
+    <child link="${prefix}front_pitch_link"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" velocity="100.0"/>
+    <dynamics damping="0.0" friction="0.1"/>
+  </joint>
+  
+  <transmission name="${prefix}front_pitch_joint_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="${prefix}front_pitch_joint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="${prefix}front_pitch_jointMotor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  
+  <gazebo reference="${prefix}front_pitch_link">
+    <kp>1000000000000000000000000000.0</kp>
+    <kd>1000000000000000000000000000.0</kd>
+    <mu1>0.5</mu1>
+    <mu2>0.5</mu2>
+    <material>Gazebo/Green</material>
+  </gazebo>
+  
+  <!-- 2D LIDAR -->
+  <link name="${prefix}lidar_link">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="0.000001" ixy="0" ixz="0" iyy="0.000001" iyz="0" izz="0.000001"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.02"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.03" length="0.02"/>
+      </geometry>
+      <material name="${prefix}black"/>
+    </visual>
+  </link>
+
+  <joint name="${prefix}lidar_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.05" rpy="0 0 0"/>
+    <parent link="${prefix}chassis"/>
+    <child link="${prefix}lidar_link"/>
+  </joint>
+
+  <gazebo reference="${prefix}lidar_link">
+    <material>Gazebo/Black</material>
+    <sensor type="ray" name="${prefix}lidar">
+      <pose>0 0 0 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>10</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14159</min_angle>
+            <max_angle>3.14159</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.01</stddev>
+        </noise>
+      </ray>
+      <plugin name="gazebo_ros_lidar_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+          <namespace>/${robot_name}</namespace>
+          <remapping>~/out:=scan</remapping>
+        </ros>
+        <output_type>sensor_msgs/LaserScan</output_type>
+        <frame_name>${prefix}lidar_link</frame_name>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot> 

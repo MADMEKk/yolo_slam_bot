@@ -10,11 +10,24 @@ def main(args=None):
     node = rclpy.create_node('minimal_client')
     cli = node.create_client(SpawnEntity, '/spawn_entity')
 
-    # Read URDF from the first argument
+    # Read URDF content
     content = ""
-    if len(sys.argv) > 1 and sys.argv[1] is not None:
-        with open(sys.argv[1], 'r') as content_file:
-            content = content_file.read()
+    if len(sys.argv) > 1:
+        if sys.argv[1] == '-':
+            # The last argument (6) contains the robot description content
+            if len(sys.argv) > 6:
+                content = sys.argv[6]
+                node.get_logger().info("Using robot description from command line argument")
+            else:
+                node.get_logger().error("Missing robot description content")
+        else:
+            # Read from file
+            try:
+                with open(sys.argv[1], 'r') as content_file:
+                    content = content_file.read()
+                    node.get_logger().info(f"Read URDF from file: {sys.argv[1]}")
+            except Exception as e:
+                node.get_logger().error(f"Failed to read URDF file: {e}")
 
     # Get namespace from second argument or use default
     namespace = ""
@@ -51,6 +64,12 @@ def main(args=None):
             node.get_logger().warn(f"Invalid z_pose value: {sys.argv[5]}, using default: 0.05")
 
     node.get_logger().info(f"Spawning robot '{robot_name}' with namespace '{namespace}' at position x:{x_pose}, y:{y_pose}, z:{z_pose}")
+
+    if not content:
+        node.get_logger().error("Empty URDF content, cannot spawn robot")
+        node.destroy_node()
+        rclpy.shutdown()
+        return
 
     req = SpawnEntity.Request()
     req.name = robot_name
